@@ -11,7 +11,6 @@ public class TableAssertion {
     private WebDriver driver;
 
     //Locators
-
     private By customersRow = By.xpath("//tbody//tr");
 
     public TableAssertion(WebDriver driver) {
