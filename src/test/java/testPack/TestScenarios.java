@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ValidateUserCreation {
+public class TestScenarios {
     int customerId;
     WebDriver driver = new ChromeDriver();
 
@@ -67,11 +67,8 @@ public class ValidateUserCreation {
 
         driver.findElement(By.xpath("//button[@ng-click='showCust()']")).click();
 
+        Assert.assertTrue(isDataInTable("Ahmed Assem 02020 Delete"));
         List<WebElement> rows = driver.findElements(By.xpath("//tbody//tr"));
-        String userData = rows.get(customerId-1).getText();
-        System.out.println(userData);
-
-        Assert.assertEquals(userData,"Ahmed Assem 02020 Delete");
 
 
         /* Delete the created User */
