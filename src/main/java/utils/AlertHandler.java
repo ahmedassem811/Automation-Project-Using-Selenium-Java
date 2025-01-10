@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 
 public class AlertHandler {
 
+    //This class handel the alert and contains method that extract the ID from the Alert message.
     public static int getCustomerIdFromAlert(WebDriver driver) {
         int customerId = 0;
 

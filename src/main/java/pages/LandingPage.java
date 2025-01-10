@@ -15,6 +15,7 @@ public class LandingPage {
         this.driver = driver;
     }
 
+    //Method Perform Click on Banking App button.
     public void clickOnBankingApp() {
         driver.findElement(BankAppBtn).click();
     }

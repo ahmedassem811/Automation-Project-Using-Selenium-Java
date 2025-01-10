@@ -4,7 +4,7 @@ package utils;
 import org.openqa.selenium.WebDriver;
 
 public class WindowHandler {
-
+    //This class handel When the app open in a new tab to switch between tabs and windows .
     public static void switchToNewWindow(WebDriver driver) {
         // Get the handle of the current window
         String originalWindow = driver.getWindowHandle();

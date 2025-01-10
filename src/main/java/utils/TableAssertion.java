@@ -8,6 +8,7 @@ import java.util.List;
 
 public class TableAssertion {
 
+    //This Class contain the Assertions that needed in the Customer Table page
     private WebDriver driver;
 
     //Locators

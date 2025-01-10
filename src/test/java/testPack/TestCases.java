@@ -16,7 +16,7 @@ import java.time.Duration;
 public class TestCases {
 
     private WebDriver driver;
-
+    String url = "https://www.way2automation.com/protractor-angularjs-practice-website.html";
     String randomFirstName;
     String randomLastName;
     String randomPostcode;
@@ -31,7 +31,6 @@ public class TestCases {
     public void setUp() {
         // Set the path to the chromedriver executable
         driver = new ChromeDriver();
-        driver.navigate().to("https://www.way2automation.com/protractor-angularjs-practice-website.html\");\n");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
     }
 
@@ -52,13 +51,14 @@ public class TestCases {
         customersTable = new CustomersTablePage(driver);
 
         //Steps of the Test Case
+        driver.navigate().to(url);
         landingPage.clickOnBankingApp();
         WindowHandler.switchToNewWindow(driver);
         bankingPage.clickOnBankMangerBtn();
         addCustomer.clickAddCustomerBtn();
         addCustomer.enterFirstName(randomFirstName);
-        addCustomer.enterLastName(randomLastName);
-        addCustomer.enterPostalCode(randomPostcode);
+        addCustomer.enterLastName(randomLastName);   // There is no endpoint for lastname so i use the firstname endpoint
+        addCustomer.enterPostalCode(randomPostcode);  // There is no endpoint for Post code so i use the Social number endpoint
         addCustomer.submitCustomerData();
         int customerId = AlertHandler.getCustomerIdFromAlert(driver);
         customersTable.clickCustomersBtn();
@@ -74,7 +74,10 @@ public class TestCases {
 
     @Test(dependsOnMethods = "validateUserCreatedSuccessfully")
     public void deleteUser(){
+
         customersTable.deleteCustomer(randomFirstName);
+
+        //Search for the created user
         boolean searchResult = customersTable.searchForCreatedUser(randomFirstName);
 
         //Assert that the customer is no longer found in the customers' table

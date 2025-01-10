@@ -13,11 +13,11 @@ public class CustomersTablePage {
     //Locators
     private By customersBtn = By.xpath("//button[@ng-click='showCust()']");
 
-
     public CustomersTablePage (WebDriver driver) {
         this.driver = driver;
     }
 
+    //Method Perform Click on Customers button.
     public void clickCustomersBtn(){
         driver.findElement(customersBtn).click();
     }
@@ -57,5 +57,4 @@ public class CustomersTablePage {
         }
         return false;
     }
-
 }
