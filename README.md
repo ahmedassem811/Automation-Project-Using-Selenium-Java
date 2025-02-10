@@ -1,7 +1,5 @@
-# Project: Automation Testing Engineer Challenge
+# Project: Automation Testing 
 
-## Description
-Trella Task for the automation testing engineer
 ---
 
 ## Prerequisites
